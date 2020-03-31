@@ -342,6 +342,30 @@ export const functionMap = {
       icon: 'thermostat',
     };
   },
+  degree: (val) => {
+    if (val === undefined || val === null || val === -32767) {
+      return {
+        value: val,
+        text: '度',
+      };
+    }
+    return {
+      value: val,
+      text: round(val, 2) + '度',
+    };
+  },
+  mul10: (val) => {
+    if (val === -32767) {
+      return {
+        value: val,
+        text: '--',
+      };
+    }
+    return {
+      value: val,
+      text: round(val / 10, 2) + '',
+    };
+  },
   //create more from here
 };
 
