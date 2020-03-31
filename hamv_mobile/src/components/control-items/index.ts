@@ -4,6 +4,7 @@ export { LargeToggleWithRange } from './large-toggle-with-range/large-toggle-wit
 export { LargeToggle } from './large-toggle/large-toggle';
 export { SimpleButtonGroup } from './simple-button-group/simple-button-group';
 export { SimpleRange } from './simple-range/simple-range';
+export { CustomRange } from './custom-range/custom-range';
 export { SimpleText } from './simple-text/simple-text';
 export { SimpleToggle } from './simple-toggle/simple-toggle';
 export { LineChart } from './line-chart/line-chart';

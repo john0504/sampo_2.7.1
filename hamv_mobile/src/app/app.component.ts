@@ -67,6 +67,7 @@ import {
   LargeToggle,
   SimpleButtonGroup,
   SimpleRange,
+  CustomRange,
   SimpleText,
   SimpleToggle,
   LineChart,
@@ -236,6 +237,7 @@ export class MyApp implements OnInit, OnDestroy {
     this.cp.registerComponent('large-toggle', LargeToggle);
     this.cp.registerComponent('button-group', SimpleButtonGroup);
     this.cp.registerComponent('range', SimpleRange);
+    this.cp.registerComponent('custom-range', CustomRange);
     this.cp.registerComponent('text', SimpleText);
     this.cp.registerComponent('toggle', SimpleToggle);
     this.cp.registerComponent('line-chart', LineChart);
