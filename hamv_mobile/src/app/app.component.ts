@@ -66,6 +66,7 @@ import {
   LargeToggleWithRange,
   LargeToggle,
   SimpleButtonGroup,
+  MultiButtonGroup,
   SimpleRange,
   CustomRange,
   SimpleText,
@@ -236,6 +237,7 @@ export class MyApp implements OnInit, OnDestroy {
     this.cp.registerComponent('large-toggle-with-range', LargeToggleWithRange);
     this.cp.registerComponent('large-toggle', LargeToggle);
     this.cp.registerComponent('button-group', SimpleButtonGroup);
+    this.cp.registerComponent('multi-button-group', MultiButtonGroup);
     this.cp.registerComponent('range', SimpleRange);
     this.cp.registerComponent('custom-range', CustomRange);
     this.cp.registerComponent('text', SimpleText);

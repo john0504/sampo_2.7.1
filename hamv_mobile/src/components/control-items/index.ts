@@ -3,6 +3,7 @@ export { RangeWithToggle } from './range-with-toggle/range-with-toggle';
 export { LargeToggleWithRange } from './large-toggle-with-range/large-toggle-with-range';
 export { LargeToggle } from './large-toggle/large-toggle';
 export { SimpleButtonGroup } from './simple-button-group/simple-button-group';
+export { MultiButtonGroup } from './multi-button-group/multi-button-group';
 export { SimpleRange } from './simple-range/simple-range';
 export { CustomRange } from './custom-range/custom-range';
 export { SimpleText } from './simple-text/simple-text';
