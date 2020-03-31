@@ -1,0 +1,351 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 冷凍室溫控模式設定功能
+    type: button-group
+  H01:
+    models:
+      - key: H01
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 冷藏室溫控模式設定功能
+    type: button-group
+  H02:
+    models:
+      - default: 1
+        key: H02
+        options:
+          type: int
+        values:
+          func: tempInt8
+          max: 127
+          min: 0
+          step: 1
+    title: 冷凍室溫度設定功能
+    type: range
+  H03:
+    models:
+      - key: H03
+        values:
+          func: tempInt8
+    title: 冷凍室溫度顯示功能
+    type: text
+  H04:
+    models:
+      - default: 1
+        key: H04
+        options:
+          type: int
+        values:
+          func: tempInt8
+          max: 127
+          min: 0
+          step: 1
+    title: 冷藏室溫度設定功能
+    type: range
+  H05:
+    models:
+      - key: H05
+        values:
+          func: tempInt8
+    title: 冷藏室溫度顯示功能
+    type: text
+  H06:
+    models:
+      - key: H06
+        values:
+          - text: 'OFF'
+            value: 0
+          - text: 'ON'
+            value: 1
+    title: 急速冷凍設定功能
+    type: toggle
+  H07:
+    models:
+      - key: H07
+        values:
+          - text: 標準
+            value: 1
+          - text: 除霜
+            value: 2
+          - text: 急凍
+            value: 4
+          - text: 製冰
+            value: 8
+          - text: 保鮮
+            value: 16
+          - text: 除臭
+            value: 32
+          - text: 節能
+            value: 64
+          - text: 靜音
+            value: 128
+    title: 運轉模式設定功能
+    type: multi-button-group
+  H08:
+    models:
+      - key: H08
+        values:
+          - text: 壓縮機運轉
+            value: 0
+          - text: 留言
+            value: 1
+    title: 運轉模式顯示功能
+    type: text
+  H09:
+    models:
+      - key: H09
+        values:
+          - text: 自動
+            value: 0
+          - text: 製冰清潔
+            value: 1
+    title: 製冰功能設定
+    type: toggle
+  H0A:
+    models:
+      - key: H0A
+        values:
+          - text: 自動
+            value: 0
+          - text: 光合作用
+            value: 1
+          - text: 負離子
+            value: 2
+    title: 保鮮功能設定
+    type: button-group
+  H0B:
+    models:
+      - key: H0B
+        values:
+          - text: 自動
+            value: 0
+          - text: 臭氧
+            value: 1
+          - text: 負離子
+            value: 2
+    title: 除臭功能設定
+    type: button-group
+  H0C:
+    models:
+      - key: H0C
+        values:
+          - text: 自動
+            value: 0
+          - text: 旅遊
+            value: 1
+    title: 節電模式設定功能
+    type: toggle
+  H0D:
+    models:
+      - key: H0D
+        values:
+          - text: 0(靜音)
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 喇叭音量設定功能
+    type: button-group
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H0F:
+    models:
+      - key: H0F
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H10:
+    models:
+      - key: H10
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H11:
+    models:
+      - key: H11
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H12:
+    models:
+      - key: H12
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H13:
+    models:
+      - key: H13
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H13_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H13
+                op: eq
+                target: 0
+        key: H13
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H03
+    - H05
+  secondary:
+    - H00
+    - H01
+    - H02
+    - H04
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H10
+    - H11
+    - H12
+    - H13
+    - H13_1
+deviceId: 2
+familyMembers:
+  - SA02.*
+familyName: SA02
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA02-banner-1570085978
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA02-thumbnail-1570085978
+scheduleLayout:
+  primary:
+    - H00
+    - H01
+    - H02
+    - H04
+    - H06
+    - H07
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D

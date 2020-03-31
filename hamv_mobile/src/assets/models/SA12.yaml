@@ -1,0 +1,208 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 暫停
+            value: 0
+          - text: 啟動
+            value: 1
+    title: 啟動設定功能
+    type: toggle
+  H02:
+    models:
+      - key: H02
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H02
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時開機功能
+    type: range-with-toggle
+  H03:
+    models:
+      - key: H03
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時關機功能
+    type: range-with-toggle
+  H04:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: UV燈開關功能設定
+    type: toggle
+  H05:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H05
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 臭氧開關功能
+    type: toggle
+  H06:
+    models:
+      - key: H06
+        values:
+          - text: 正常
+            value: 0
+          - text: 水滿
+            value: 1
+    title: 水滿指示功能
+    type: text
+  H07:
+    models:
+      - key: H07
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H08:
+    models:
+      - key: H08
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H09:
+    models:
+      - key: H09
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H0C:
+    models:
+      - key: H0C
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H0C_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H0C
+                op: eq
+                target: 0
+        key: H0C
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0C_1
+deviceId: 12
+familyMembers:
+  - SA12.*
+familyName: SA12
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA12-banner-1570086262
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA12-thumbnail-1570086262
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05

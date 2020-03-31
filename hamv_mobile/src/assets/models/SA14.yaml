@@ -1,0 +1,297 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 冷氣
+            value: 0
+          - text: 除濕
+            value: 1
+          - text: 送風
+            value: 2
+          - text: 自動
+            value: 3
+          - text: 暖氣
+            value: 4
+    title: 運轉模式切換
+    type: button-group
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: 自動
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 風速設定功能
+    type: button-group
+  H03:
+    models:
+      - default: 25
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        options:
+          type: int
+        values:
+          func: tempInt8
+          max: 127
+          min: 0
+          step: 1
+    title: 溫度設定功能
+    type: range
+  H04:
+    models:
+      - key: H04
+        values:
+          func: tempInt8
+    title: 回風溫度顯示功能
+    type: text
+  H05:
+    models:
+      - key: H05
+        values:
+          func: tempInt8
+    title: 外氣溫度顯示功能
+    type: text
+  H06:
+    models:
+      - key: H06
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H06
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時開機功能
+    type: range-with-toggle
+  H07:
+    models:
+      - key: H07
+        values:
+          func: text
+    title: 點檢查設定功能
+    type: text
+  H08:
+    models:
+      - key: H08
+        values:
+          func: text
+    title: 室內機型式
+    type: text
+  H09:
+    models:
+      - key: H09
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H0C:
+    models:
+      - key: H0C
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H0D:
+    models:
+      - key: H0D
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H0E_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H0E
+                op: eq
+                target: 0
+        key: H0E
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+  H14:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H14
+                op: eq
+                target: 0
+        key: H14
+        values:
+          - text: 正常
+            value: 0
+          - text: 須清洗
+            value: 1
+    title: 濾網清洗通知
+    type: toggle
+  H15:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H15
+        values:
+          - text: 自動換氣
+            value: 0
+          - text: 全熱換氣
+            value: 1
+          - text: 普通換氣
+            value: 2
+    title: 換氣模式
+    type: button-group
+  H16:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H16
+        values:
+          - text: 無
+            value: 0
+          - text: 30分
+            value: 1
+          - text: 60分
+            value: 2
+    title: 預冷/預熱機能
+    type: button-group
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0E_1
+    - H14
+    - H15
+    - H16
+deviceId: 14
+familyMembers:
+  - SA14.*
+familyName: SA14
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA14-banner-1570086297
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA14-thumbnail-1570086297
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H06
+    - H15
+    - H16

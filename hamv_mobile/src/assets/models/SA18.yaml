@@ -1,0 +1,255 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 關閉
+            value: 0
+          - text: 節能模式1
+            value: 1
+          - text: 節能模式2
+            value: 2
+          - text: 節能模式3
+            value: 3
+    title: 節能模式
+    type: button-group
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: humi
+    title: 電量顯示功能
+    type: text
+  H1A:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1A
+        options:
+          type: uint
+        values:
+          func: humi
+          max: 100
+          min: 0
+          step: 1
+    title: 亮度設定功能
+    type: range
+  H1B:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1B
+        options:
+          type: uint
+        values:
+          func: humi
+          max: 100
+          min: 0
+          step: 1
+    title: 對比設定功能
+    type: range
+  H1C:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1C
+        options:
+          type: uint
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: R原色設定功能
+    type: range
+  H1D:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1D
+        options:
+          type: uint
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: G原色設定功能
+    type: range
+  H1E:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1E
+        options:
+          type: uint
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: B原色設定功能
+    type: range
+  H1F:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H1F
+        options:
+          type: uint
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: 音量控制功能
+    type: range
+  H40:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H40
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 靜音功能
+    type: toggle
+  H50:
+    models:
+      - key: H50
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H51:
+    models:
+      - key: H51
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H52:
+    models:
+      - key: H52
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H53:
+    models:
+      - key: H523
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H54:
+    models:
+      - key: H54
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H54_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H54
+                op: eq
+                target: 0
+        key: H54
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H0A
+    - H1A
+    - H1B
+    - H1C
+    - H1D
+    - H1E
+    - H1F
+    - H40
+    - H50
+    - H51
+    - H52
+    - H53
+    - H54
+    - H54_1
+deviceId: 18
+familyMembers:
+  - SA18.*
+familyName: SA18
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA18-banner-1570086417
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA18-thumbnail-1570086417
+scheduleLayout:
+  primary:
+    - H01
+    - H1A
+    - H1B
+    - H1C
+    - H1D
+    - H1E
+    - H1F
+    - H40

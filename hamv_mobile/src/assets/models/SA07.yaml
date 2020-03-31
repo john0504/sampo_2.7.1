@@ -1,0 +1,333 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源開關控制
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 再加熱功能設定
+    type: toggle
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 自動控制功能設定
+    type: toggle
+  H03:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        options:
+          type: uint
+        values:
+          func: tempCelsius
+          max: 255
+          min: 0
+          step: 1
+    title: 設定熱水溫度值
+    type: range
+  H04:
+    models:
+      - key: H04
+        values:
+          func: tempInt8
+    title: 現在熱水溫度值
+    type: text
+  H05:
+    models:
+      - key: H05
+        values:
+          func: tempInt8
+    title: 入水溫度值
+    type: text
+  H06:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H06
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 熱回收功能設定
+    type: toggle
+  H07:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H07
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 取消預約設定
+    type: toggle
+  H08:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H08
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 季節感知設定
+    type: toggle
+  H09:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H09
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 節能模式設定
+    type: toggle
+  H0A:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0A
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 急熱模式設定
+    type: toggle
+  H0B:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0B
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+    title: 殺菌模式設定
+    type: button-group
+  H0E:
+    models:
+      - key: H0E
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H0E
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時開機功能
+    type: range-with-toggle
+  H0F:
+    models:
+      - key: H0F
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H0F
+        options:
+          type: uint
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時關機功能
+    type: range-with-toggle
+  H11:
+    models:
+      - key: H11
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H12:
+    models:
+      - key: H12
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H13:
+    models:
+      - key: H13
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H14:
+    models:
+      - key: H14
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H15:
+    models:
+      - key: H15
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H16:
+    models:
+      - key: H16
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H16_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H16
+                op: eq
+                target: 0
+        key: H16
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0E
+    - H0F
+    - H11
+    - H12
+    - H13
+    - H14
+    - H15
+    - H16
+    - H16_1
+deviceId: 7
+familyMembers:
+  - SA07.*
+familyName: SA07
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA07-banner-1570086156
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA07-thumbnail-1570086156
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0E
+    - H0F

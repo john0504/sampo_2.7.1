@@ -1,0 +1,248 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 停止中
+            value: 0
+          - text: 暫停中
+            value: 1
+          - text: 運轉中
+            value: 2
+    title: 運轉狀態
+    type: button-group
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: 弱
+            value: 0
+          - text: 強
+            value: 1
+    title: 發熱狀態
+    type: toggle
+  H03:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        values:
+          - text: 標準
+            value: 0
+          - text: 厚衣
+            value: 1
+          - text: 長時間
+            value: 2
+          - text: 短時間
+            value: 3
+          - text: 保留
+            value: 4
+    title: 運轉行程
+    type: button-group
+  H04:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 0
+          step: 30
+    title: 烘衣行程
+    type: range
+  H05:
+    models:
+      - key: H05
+        values:
+          func: timer
+    title: 定時
+    type: text
+  H06:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H06
+        values:
+          - text: 送風
+            value: 0
+          - text: 熱風
+            value: 1
+    title: 乾衣狀態
+    type: toggle
+  H07:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H07
+        options:
+          type: uint16
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: 顯示狀態
+    type: range
+  H08:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H08
+        values:
+          - text: 弱
+            value: 0
+          - text: 中
+            value: 1
+          - text: 強
+            value: 2
+    title: 風量強度
+    type: button-group
+  H09:
+    models:
+      - key: H09
+        values:
+          func: tempCelsius
+    title: 熱風溫度
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H0C:
+    models:
+      - key: H0C
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H0D:
+    models:
+      - key: H0D
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H0F:
+    models:
+      - key: H0F
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H0F_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H0F
+                op: eq
+                target: 0
+        key: H0F
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H0F_1
+deviceId: 6
+familyMembers:
+  - SA06.*
+familyName: SA06
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA06-banner-1570086118
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA06-thumbnail-1570086118
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H06
+    - H07
+    - H08

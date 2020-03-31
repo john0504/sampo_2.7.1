@@ -1,0 +1,254 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 自動
+            value: 0
+          - text: 靜音
+            value: 1
+          - text: 弱風
+            value: 2
+          - text: 標準
+            value: 3
+          - text: 強風
+            value: 4
+          - text: 極速
+            value: 5
+    title: 運轉模式設定功能
+    type: button-group
+  H02:
+    models:
+      - key: H02
+        options:
+          type: uint
+        values:
+          func: timerHour
+          max: 24
+          min: 1
+          step: 1
+      - default: 1
+        key: H02
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時開機功能
+    type: range-with-toggle
+  H03:
+    models:
+      - key: H03
+        options:
+          type: uint
+        values:
+          func: timerHour
+          max: 24
+          min: 1
+          step: 1
+      - default: 1
+        key: H03
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時關機功能
+    type: range-with-toggle
+  H04:
+    models:
+      - key: H04
+        values:
+          - text: 感測中
+            value: 0
+          - text: 高
+            value: 1
+          - text: 中
+            value: 2
+          - text: 低
+            value: 3
+    title: 空氣清淨度顯示功能
+    type: text
+  H05:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H05
+                op: eq
+                target: 0
+        key: H05
+        values:
+          - text: 濾網狀態正常
+            value: 0
+          - text: 濾網已至需清洗狀態
+            value: 1
+    title: 濾網清洗通知功能
+    type: toggle
+  H06:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H06
+                op: eq
+                target: 0
+        key: H06
+        values:
+          - text: HEPA狀態正常
+            value: 0
+          - text: HEPA已至需更換狀態
+            value: 1
+    title: HEPA更換通知功能
+    type: toggle
+  H07:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H07
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 負離子設定功能
+    type: toggle
+  H08:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H08
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 按鍵鎖設定功能
+    type: toggle
+  H09:
+    models:
+      - key: H09
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H0C:
+    models:
+      - key: H0C
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H0D:
+    models:
+      - key: H0D
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H0E_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+              - key: H0E
+                op: eq
+                target: 0
+        key: H0E
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0E_1
+deviceId: 8
+familyMembers:
+  - SA08.*
+familyName: SA08
+images:
+  thumbnail:
+    uri: "assets/img/SA08.png"
+  banner:
+    uri: "assets/img/SA08_b.png"
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H05
+    - H06
+    - H07
+    - H08

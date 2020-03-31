@@ -1,0 +1,446 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 門狀態
+    type: text
+  H01:
+    models:
+      - key: H01
+        values:
+          - text: 停止中
+            value: 0
+          - text: 調理途中的暫停
+            value: 1
+          - text: 調理中
+            value: 2
+    title: 調理實行狀態
+    type: text
+  H02:
+    models:
+      - key: H02
+        values:
+          - text: 正常
+            value: 0
+          - text: 庫內燃燒
+            value: 1
+          - text: 排氣Thermo異常
+            value: 2
+          - text: 按鍵異常
+            value: 3
+          - text: 外部記憶體異常
+            value: 4
+    title: 錯誤狀態
+    type: text
+  H03:
+    models:
+      - key: H03
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 調理段數設定
+    type: button-group
+  H04:
+    models:
+      - key: H04
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 調理火力設定
+    type: button-group
+  H05:
+    models:
+      - default: 1
+        key: H05
+        options:
+          type: uint16
+        values:
+          func: text
+          max: 1440
+          min: 0
+          step: 10
+    title: 調理時間設定
+    type: range
+  H06:
+    models:
+      - key: H06
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 欲記憶調理行程編號設定
+    type: button-group
+  H07:
+    models:
+      - key: H07
+        values:
+          func: text
+    title: 欲讀出之調理行程編號設定
+    type: text
+  H08:
+    models:
+      - key: H08
+        values:
+          func: text
+    title: 欲讀出之調理段數設定值
+    type: text
+  H09:
+    models:
+      - key: H09
+        values:
+          func: text
+    title: 欲讀出之調理火力設定值
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: timer
+    title: 欲讀出之調理時間設定值
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 提示音設定值
+    type: button-group
+  H0C:
+    models:
+      - key: H0C
+        values:
+          - text: 停止中
+            value: 0
+          - text: 調理途中的暫停
+            value: 1
+          - text: 調理中
+            value: 2
+          - text: 調理完成
+            value: 3
+          - text: 除臭中
+            value: 4
+    title: 微波爐實行狀態
+    type: text
+  H0D:
+    models:
+      - key: H0D
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 菜單烹調設定
+    type: button-group
+  H0E:
+    models:
+      - key: H0E
+        values:
+          - text: 取消
+            value: 0
+          - text: 設定
+            value: 1
+    title: 兒童鎖設定
+    type: toggle
+  H0F:
+    models:
+      - key: H0F
+        values:
+          - text: 微波加熱關閉/暫停
+            value: 0
+          - text: 啟動
+            value: 1
+    title: 微波動作控制功能
+    type: toggle
+  H10:
+    models:
+      - key: H10
+        values:
+          func: timer
+    title: 剩餘時間顯示
+    type: text
+  H11:
+    models:
+      - default: 1
+        key: H11
+        options:
+          type: int
+        values:
+          func: tempInt8
+          max: 127
+          min: 0
+          step: 1
+    title: 調理溫度設定
+    type: range
+  H12:
+    models:
+      - key: H12
+        values:
+          func: tempInt8
+    title: 食材溫度顯示
+    type: text
+  H13:
+    models:
+      - key: H13
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H14:
+    models:
+      - key: H14
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H15:
+    models:
+      - key: H15
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H16:
+    models:
+      - key: H16
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H17:
+    models:
+      - key: H17
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H18:
+    models:
+      - key: H18
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H18_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H18
+                op: eq
+                target: 0
+        key: H18
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H10
+    - H11
+    - H12
+    - H13
+    - H14
+    - H15
+    - H16
+    - H17
+    - H18
+    - H18_1
+deviceId: 13
+familyMembers:
+  - SA13.*
+familyName: SA13
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA13-banner-1570086279
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA13-thumbnail-1570086279
+scheduleLayout:
+  primary:
+    - H03
+    - H04
+    - H05
+    - H06
+    - H0B
+    - H0D
+    - H0E
+    - H0F
+    - H11

@@ -1,0 +1,289 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: '1'
+            value: 0
+          - text: '2'
+            value: 1
+          - text: '3'
+            value: 2
+          - text: '4'
+            value: 3
+          - text: '5'
+            value: 4
+    title: 運轉模式設定功能
+    type: button-group
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 運轉模式設定功能
+    type: button-group
+  H03:
+    models:
+      - key: H03
+        values:
+          func: tempInt8
+    title: 室內溫度顯示功能
+    type: text
+  H04:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 0
+          step: 30
+    title: 睡眠模式剩餘時間設定功能
+    type: range
+  H05:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H05
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 擺頭設定功能
+    type: toggle
+  H06:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H06
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 負離子設定功能
+    type: toggle
+  H07:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H07
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 開關燈光功能
+    type: toggle
+  H08:
+    models:
+      - key: H08
+        values:
+          func: humi
+    title: 室內濕度顯示功能
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H0B
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時開機功能
+    type: range-with-toggle
+  H0C:
+    models:
+      - key: H0C
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        key: H0C
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時關機功能
+    type: range-with-toggle
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H0F:
+    models:
+      - key: H0F
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H10:
+    models:
+      - key: H10
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H11:
+    models:
+      - key: H11
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H12:
+    models:
+      - key: H12
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H12_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H12
+                op: eq
+                target: 0
+        key: H12
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H10
+    - H11
+    - H12
+    - H12_1
+deviceId: 15
+familyMembers:
+  - SA15.*
+familyName: SA15
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA15-banner-1570086312
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA15-thumbnail-1570086312
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H04
+    - H05
+    - H06
+    - H07
+    - H0B
+    - H0C

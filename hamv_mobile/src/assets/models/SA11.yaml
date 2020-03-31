@@ -1,0 +1,213 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 火力大小控制功能
+    type: button-group
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 保溫功能
+    type: toggle
+  H03:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        values:
+          - text: 正常
+            value: 0
+          - text: 高溫
+            value: 1
+    title: 爐面高溫指示功能
+    type: toggle
+  H04:
+    models:
+      - key: H04
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 定時關機功能
+    type: range-with-toggle
+  H05:
+    models:
+      - key: H05
+        values:
+          - text: 正常
+            value: 0
+          - text: 異常
+            value: 1
+    title: 檢鍋功能
+    type: text
+  H06:
+    models:
+      - key: H06
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H07:
+    models:
+      - key: H07
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H08:
+    models:
+      - key: H08
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H09:
+    models:
+      - key: H09
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H0B_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H0B
+                op: eq
+                target: 0
+        key: H0B
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B_1
+deviceId: 11
+familyMembers:
+  - SA11.*
+familyName: SA11
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA11-banner-1570086245
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA11-thumbnail-1570086245
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H04

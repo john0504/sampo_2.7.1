@@ -1,0 +1,574 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 暫停
+            value: 0
+          - text: 啟動
+            value: 1
+    title: 啟動設定功能
+    type: toggle
+  H02:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - text: 標準
+            value: 0
+          - text: 柔洗
+            value: 1
+          - text: 強洗淨
+            value: 2
+          - text: 襯衫
+            value: 3
+          - text: 被毯
+            value: 4
+          - text: 高級衣物
+            value: 5
+          - text: 毛織類
+            value: 6
+          - text: 使用者自定
+            value: 7
+          - text: 浸洗
+            value: 8
+          - text: 乾洗
+            value: 9
+          - text: 快洗
+            value: 10
+          - text: 槽洗淨
+            value: 11
+          - text: 溫水洗
+            value: 12
+    title: 洗程模式設定功能
+    type: button-group
+  H03:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        values:
+          - text: 預約中
+            value: 0
+          - text: 浸泡中
+            value: 1
+          - text: 洗衣中
+            value: 2
+          - text: 清洗中
+            value: 3
+          - text: 脫水中
+            value: 4
+          - text: 風乾
+            value: 5
+          - text: 乾洗中
+            value: 6
+          - text: 洗程結束
+            value: 7
+          - text: 關機
+            value: 8
+    title: 洗衣狀態顯示功能
+    type: text
+  H04:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 水位設定功能
+    type: button-group
+  H05:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H05
+        options:
+          type: uint
+        values:
+          func: text
+          max: 255
+          min: 0
+          step: 1
+    title: 清洗次數設定功能
+    type: range
+  H06:
+    models:
+      - key: H06
+        values:
+          func: text
+    title: 清洗剩餘次數顯示功能
+    type: text
+  H07:
+    models:
+      - key: H07
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H07
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 洗衣時間設定功能
+    type: range-with-toggle
+  H08:
+    models:
+      - key: H08
+        values:
+          func: timer
+    title: 洗衣剩餘時間顯示功能
+    type: text
+  H09:
+    models:
+      - key: H09
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H09
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 脫水時間設定功能
+    type: range-with-toggle
+  H0A:
+    models:
+      - key: H0A
+        values:
+          func: timer
+    title: 脫水剩餘時間顯示功能
+    type: text
+  H0B:
+    models:
+      - key: H0B
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0B
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 浸泡時間設定功能
+    type: range-with-toggle
+  H0C:
+    models:
+      - key: H0C
+        values:
+          func: timer
+    title: 浸泡剩餘時間顯示功能
+    type: text
+  H0D:
+    models:
+      - key: H0D
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0D
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 冷風風乾時間設定功能
+    type: range-with-toggle
+  H0E:
+    models:
+      - key: H0E
+        values:
+          func: timer
+    title: 冷風風乾剩餘時間顯示功能
+    type: text
+  H0F:
+    models:
+      - key: H0F
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0F
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 槽洗淨時間設定功能
+    type: range-with-toggle
+  H10:
+    models:
+      - key: H10
+        values:
+          func: timer
+    title: 槽洗淨剩餘時間顯示功能
+    type: text
+  H11:
+    models:
+      - key: H11
+        options:
+          type: uint16
+        values:
+          func: timer
+          max: 1440
+          min: 30
+          step: 30
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H11
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 乾洗時間設定功能
+    type: range-with-toggle
+  H12:
+    models:
+      - key: H12
+        values:
+          func: timer
+    title: 乾洗剩餘時間顯示功能
+    type: text
+  H13:
+    models:
+      - key: H13
+        values:
+          func: timer
+    title: 總剩餘時間顯示功能
+    type: text
+  H14:
+    models:
+      - key: H14
+        options:
+          type: uint
+        values:
+          func: timerHour
+          max: 24
+          min: 1
+          step: 1
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H14
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 預約時間設定功能
+    type: range-with-toggle
+  H15:
+    models:
+      - key: H15
+        values:
+          func: timerHour
+    title: 預約剩餘時間顯示功能
+    type: text
+  H16:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H16
+        values:
+          - text: 臭氧殺菌
+            value: 1
+          - text: 夜間照明
+            value: 2
+          - text: 離子殺菌除味
+            value: 4
+          - text: 兒童安全模式
+            value: 8
+          - text: 門蓋鎖定
+            value: 16
+    title: 附加設定功能
+    type: multi-button-group
+  H17:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H17
+        values:
+          - text: 標準
+            value: 0
+          - text: 溢注
+            value: 1
+          - text: 噴淋
+            value: 2
+    title: 清洗模式
+    type: button-group
+  H18:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H18
+        values:
+          - text: 標準
+            value: 0
+          - text: 除菌
+            value: 1
+          - text: 除臭
+            value: 2
+          - text: 大件
+            value: 3
+          - text: 小物
+            value: 4
+    title: 溫水洗程設定功能
+    type: button-group
+  H19:
+    models:
+      - key: H19
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H1A:
+    models:
+      - key: H1A
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H1B:
+    models:
+      - key: H1B
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H1C:
+    models:
+      - key: H1C
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H1D:
+    models:
+      - key: H1D
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H1E:
+    models:
+      - key: H1E
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H1E_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H1E
+                op: eq
+                target: 0
+        key: H1E
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H10
+    - H11
+    - H12
+    - H13
+    - H14
+    - H15
+    - H16
+    - H17
+    - H18
+    - H19
+    - H1A
+    - H1B
+    - H1C
+    - H1D
+    - H1E
+    - H1E_1
+deviceId: 3
+familyMembers:
+  - SA03.*
+familyName: SA03
+images:
+  banner:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA03-banner-1570086004
+  thumbnail:
+    uri: >-
+      https://exohomextaiseia.apps.exosite.io/file_manager/SA03-thumbnail-1570086004
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H04
+    - H05
+    - H07
+    - H09
+    - H0B
+    - H0D
+    - H0F
+    - H11
+    - H14
+    - H16
+    - H17
+    - H18

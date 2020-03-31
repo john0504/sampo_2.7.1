@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'SSID_CONFIRM.ADD_PRODUCT' | translate: { productName: themeService.productName } }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="main">
+      <h1 align="center">{{ 'LAST_ERROR.TITLE' | translate }}</h1>
+      <p align="center">{{ (lastError + '_TITLE') | translate }}</p>
+      <p align="center">{{ (lastError + '_CONTENT') | translate }}</p>
+      <button
+        color="primary"
+        full round
+        icon-left
+        ion-button
+        send-log-report="deviceLogs"
+      >
+        <i class="far fa-envelope-open text-icon"></i>
+        {{ 'SETTINGS.SEND_FEEDBACK' | translate }}
+      </button>
+    </div>
+    <div>
+      <button
+        (click)="closePage()"
+        class="bottom-button full-button"
+        color="primary"
+        full
+        ion-button
+      >{{ 'LAST_ERROR.BUTTON_CONTINUE' | translate }}</button>
+    </div>
+  </div>
+  <extra-page-space></extra-page-space>
+</ion-content>

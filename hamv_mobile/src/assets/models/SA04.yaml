@@ -1,0 +1,662 @@
+components:
+  H00:
+    models:
+      - key: H00
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 電源控制功能
+    type: toggle
+  H01:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H01
+        values:
+          - text: 自動除濕
+            value: 0
+          - text: 設定除濕
+            value: 1
+          - text: 連續除濕
+            value: 2
+          - text: 乾衣
+            value: 3
+          - text: 空氣清淨
+            value: 4
+          - text: 防霉防蟎
+            value: 5
+          - text: 送風
+            value: 6
+          - text: 人體舒適
+            value: 7
+          - text: 低濕乾燥
+            value: 8
+    title: 運轉模式設定功能
+    type: button-group
+  H02:
+    models:
+      - key: H02
+        options:
+          type: uint
+        values:
+          func: timerHour
+          max: 99
+          min: 1
+          step: 1
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H02
+        values:
+          - icon: timer
+            text: 關閉
+            value: 0
+          - text: ''
+            value: '*'
+    title: 運轉時間設定功能
+    type: range-with-toggle
+  H03:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H03
+        options:
+          type: uint
+        values:
+          func: humi
+          max: 99
+          min: 0
+          step: 1
+    title: 相對濕度設定功能
+    type: range
+  H04:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H04
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 除濕段數設定功能
+    type: button-group
+  H05:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H05
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 乾衣段數設定功能
+    type: button-group
+  H06:
+    models:
+      - key: H06
+        values:
+          func: tempInt8
+    title: 室內溫度顯示功能
+    type: text
+  H07:
+    models:
+      - key: H07
+        values:
+          func: humi
+    title: 室內濕度顯示功能
+    type: text
+  H08:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H08
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 開關自動風向功能
+    type: toggle
+  H09:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H09
+        values:
+          - text: '0'
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 設定風向段數功能
+    type: button-group
+  H0A:
+    models:
+      - key: H0A
+        values:
+          - text: 正常
+            value: 0
+          - text: 滿水
+            value: 1
+    title: 滿水顯示警告功能
+    type: text
+  H0B:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H0B
+                op: eq
+                target: 0
+        key: H0B
+        values:
+          - text: 正常
+            value: 0
+          - text: 需清洗髒污
+            value: 1
+    title: 濾網清洗通知功能
+    type: toggle
+  H0C:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0C
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 氣氛燈控制功能
+    type: toggle
+  H0D:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0D
+        values:
+          - text: 關閉
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 空氣清淨模式設定功能
+    type: button-group
+  H0E:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H0E
+        values:
+          - text: 自動
+            value: 0
+          - text: '1'
+            value: 1
+          - text: '2'
+            value: 2
+          - text: '3'
+            value: 3
+          - text: '4'
+            value: 4
+          - text: '5'
+            value: 5
+          - text: '6'
+            value: 6
+          - text: '7'
+            value: 7
+          - text: '8'
+            value: 8
+          - text: '9'
+            value: 9
+          - text: '10'
+            value: 10
+          - text: '11'
+            value: 11
+          - text: '12'
+            value: 12
+          - text: '13'
+            value: 13
+          - text: '14'
+            value: 14
+          - text: '15'
+            value: 15
+    title: 風速設定功能
+    type: button-group
+  H0F:
+    models:
+      - key: H0F
+        values:
+          - text: 正常
+            value: 0
+          - text: 側向出風
+            value: 1
+    title: 側向出風口功能
+    type: text
+  H10:
+    models:
+      - key: H10
+        values:
+          - text: 正常
+            value: 0
+          - text: 按鍵聲音
+            value: 1
+          - text: 滿水及按鍵聲音
+            value: 2
+    title: 聲音設定功能
+    type: button-group
+  H11:
+    models:
+      - key: H11
+        values:
+          - text: 正常
+            value: 0
+          - text: 除霜狀態
+            value: 1
+    title: 除霜顯示功能
+    type: text
+  H12:
+    models:
+      - key: H12
+        values:
+          func: text
+    title: 錯誤訊息顯示功能
+    type: text
+  H13:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H13
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 機體防霉功能
+    type: toggle
+  H14:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H14
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 高濕度提示設定功能
+    type: toggle
+  H15:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H15
+        options:
+          type: uint
+        values:
+          func: humi
+          max: 99
+          min: 0
+          step: 1
+    title: 高濕度值定義設定功能
+    type: range
+  H16:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H16
+        values:
+          - text: 關閉
+            value: 0
+          - text: 開啟
+            value: 1
+    title: 按鍵鎖功能
+    type: toggle
+  H17:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H17
+        values:
+          - text: 運轉
+            value: 1
+          - text: 運轉模式
+            value: 2
+          - text: 溼度設定
+            value: 4
+          - text: 風速設定
+            value: 8
+          - text: 自動轉向設定
+            value: 16
+          - text: 停止鍵
+            value: 32
+    title: 有線控制器、無線遙控器禁止功能
+    type: multi-button-group
+  H18:
+    models:
+      - disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+        key: H18
+        values:
+          - text: 有聲
+            value: 0
+          - text: 無聲
+            value: 1
+    title: SAA控制提示音功能
+    type: toggle
+  H19:
+    models:
+      - key: H19
+        values:
+          func: text
+    title: 運轉電流
+    type: text
+  H1A:
+    models:
+      - key: H1A
+        values:
+          func: text
+    title: 運轉電壓
+    type: text
+  H1B:
+    models:
+      - key: H1B
+        values:
+          func: text
+    title: 運轉功因
+    type: text
+  H1C:
+    models:
+      - key: H1C
+        values:
+          func: text
+    title: 即時功率
+    type: text
+  H1D:
+    models:
+      - key: H1D
+        values:
+          func: text
+    title: 累積用電量
+    type: text
+  H1D_1:
+    models:
+      - default: 1
+        disable:
+          - conditions:
+              - key: H00
+                op: eq
+                target: 0
+          - conditions:
+              - key: H1D
+                op: eq
+                target: 0
+        key: H1D
+        values:
+          - text: '0'
+            value: 0
+          - text: 重置
+            value: '*'
+    title: 累積用電量重置
+    type: toggle
+controlLayout:
+  primary:
+    - H00
+  secondary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H06
+    - H07
+    - H08
+    - H09
+    - H0A
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H0F
+    - H10
+    - H11
+    - H12
+    - H13
+    - H14
+    - H15
+    - H16
+    - H17
+    - H18
+    - H19
+    - H1A
+    - H1B
+    - H1C
+    - H1D
+    - H1D_1
+deviceId: 4
+eventCollections:
+  - conditions:
+      - key: H00
+        op: eq
+        target: 1
+    name: device_switched_on
+    type: triggerEvent
+  - conditions:
+      - key: H00
+        op: eq
+        target: 0
+    name: device_switched_off
+    type: triggerEvent
+familyMembers:
+  - SA04.*
+  - RD.*
+  - RDI.*
+familyName: SA04
+images:
+  thumbnail:
+    uri: "assets/img/SA04.png"
+  banner:
+    uri: "assets/img/SA04_b.png"
+integration:
+  traits:
+    - append_name: ' power'
+      attributes:
+        on_off:
+          key: H00
+          values:
+            'off': 0
+            'on': 1
+        percentage:
+          before:
+            - key: H00
+              value: 1
+          key: H03
+          max: 99
+          min: 0
+      description: Smart DEH power
+      id: deh1
+      type: light
+scheduleLayout:
+  primary:
+    - H01
+    - H02
+    - H03
+    - H04
+    - H05
+    - H08
+    - H09
+    - H0B
+    - H0C
+    - H0D
+    - H0E
+    - H10
+    - H13
+    - H14
+    - H15
+    - H16
+    - H17
+    - H18
